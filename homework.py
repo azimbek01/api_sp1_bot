@@ -61,7 +61,7 @@ def main():
                     parse_homework_status(new_homework.get('homeworks')[0])
                     )
             current_timestamp = new_homework.get('current_date')
-            time.sleep(300)
+            time.sleep(1200)
 
         except Exception as e:
             print(f'Бот упал с ошибкой: {e}')
