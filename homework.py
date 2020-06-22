@@ -33,7 +33,7 @@ def get_homework_statuses(current_timestamp):
         'Authorization': f'OAuth {PRACTICUM_TOKEN}'
     }
     data = {
-        'from_date': current_timestamp
+        'from_date': '0' #current_timestamp
     }
 
     try:
