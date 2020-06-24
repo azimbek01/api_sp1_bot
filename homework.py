@@ -17,10 +17,10 @@ URL = 'https://praktikum.yandex.ru/api/user_api/homework_statuses/'
 
 
 def parse_homework_status(homework):
-    if homework.get('homework_name') is None:
+    homework_name = homework.get('homework_name')
+    if homework_name is None:
         raise RuntimeError('Имя задания неопределено - None')
     else:
-        homework_name = homework.get('homework_name')
         if homework.get('status') is None:
             raise RuntimeError(
                 f'Неопределенный статус у задания {homework_name}'
@@ -31,6 +31,10 @@ def parse_homework_status(homework):
             elif homework['status'] == 'approved':
                 verdict = 'Ревьюеру всё понравилось, можно ' \
                            'приступать к следующему уроку.'
+            else:
+                raise RuntimeError(
+                    f'Неизвестный статус у задания {homework_name}'
+                )
 
             return f'У вас проверили работу "{homework_name}"!\n\n{verdict}'
 
