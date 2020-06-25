@@ -65,7 +65,6 @@ def send_message(message):
 
 def main():
     current_timestamp = int(time.time())
-    send_message('Бот запущен')
 
     while True:
         try:
