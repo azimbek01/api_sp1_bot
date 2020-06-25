@@ -15,12 +15,6 @@ bot = telegram.Bot(TELEGRAM_TOKEN)
 
 
 def parse_homework_status(homework):
-    homework_name = homework['homework_name']
-    if homework['status'] == 'rejected':
-        verdict = 'К сожалению в работе нашлись ошибки.'
-    else:
-        verdict = 'Ревьюеру всё понравилось, можно приступать к следующему уроку.'
-    return f'У вас проверили работу "{homework_name}"!\n\n{verdict}'
     # homework_name = homework['homework_name']
     # if homework_name is None:
     #     raise RuntimeError('Имя задания неопределено - None')
@@ -41,6 +35,7 @@ def parse_homework_status(homework):
     #     )
 
     # return f'У вас проверили работу "{homework_name}"!\n\n{verdict}'
+    return 'Test'
 
 
 def get_homework_statuses(current_timestamp):
